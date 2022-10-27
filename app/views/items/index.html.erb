@@ -1,0 +1,37 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Items</h1>
+
+<div id="items">
+  <% @items.each do |item| %>
+    <%= render item %>
+    <p class = "flex flex-row">
+      <div><%= link_to "Show this item", item %></div>
+      <div class="flex">
+       <p class = "paddingX"><%= link_to "edit", edit_item_path(item) %></p>
+      <p class = "paddingX"><%= link_to "delete", edit_item_path(item) %></p>
+      </div>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New item", new_item_path %>
+
+<style>
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex{
+  display:flex;
+  flex-direction: row;
+  row-gap: 0.5rem;
+}
+.paddingX{
+  padding: 0px 8px;
+}
+.gapX{
+  row-gap: 8px;
+}
+</style>
