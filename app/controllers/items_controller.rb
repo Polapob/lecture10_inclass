@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @user_id = session[:user_id]
+    @items = Item.where(user_id: @user_id)
   end
 
   # GET /items/1 or /items/1.json

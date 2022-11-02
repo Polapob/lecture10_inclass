@@ -3,7 +3,8 @@ class InventoriesController < ApplicationController
 
   # GET /inventories or /inventories.json
   def index
-    @inventories = Inventory.all
+    @user_id = session[:user_id]
+    @inventories = Inventory.where(user_id: @user_id)
   end
 
   # GET /inventories/1 or /inventories/1.json
