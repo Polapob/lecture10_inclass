@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'shop/:id', to: 'shop#main'
+  get 'shop/main'
   resources :inventories
   get 'inventory/show'
   resources :items
