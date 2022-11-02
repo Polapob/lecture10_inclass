@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post 'main/login', to: 'main#login_post'
   get 'main/user_items', to: 'items#index'
   get 'main/inventories', to: 'inventories#index'
+  get 'inventories/buy/:item_id/:vendor_id', to: 'shop#buy'
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
